@@ -1,6 +1,7 @@
 # DrunkenInstitute
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+This project is the result of a skill assessment from Expert Institute. This project is mostly incomplete and only implements certain base functionalities.
 
 ## Development server
 
