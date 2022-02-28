@@ -1,5 +1,12 @@
 # DrunkenInstitute
 
+## Prerequisites
+Before you begin, make sure your development environment includes Nodejs v16.14.0 and an node package manager 8.3.1 (should come with the node install).
+
+If you don't already have it installed, install the angular cli by executing 'npm install -g @angular/cli'.
+
+Navigate to the root of the project (should be able to see src folder, angular.json, etc.. ) and run 'npm install' to install the dependencies.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
 This project is the result of a skill assessment from Expert Institute. This project is mostly incomplete and only implements certain base functionalities.
 
