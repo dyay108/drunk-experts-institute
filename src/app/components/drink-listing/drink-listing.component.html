@@ -1,0 +1,40 @@
+<div class="">
+
+    <div class="table-header pb-3">
+        <div class="grid grid-cols-3 text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+            <div class="cursor-pointer " (click)="sortTable('drinks')">
+                <span>Drink</span>
+                <i *ngIf="currentSortColumn ==='drinks'" class="pl-2 fa-solid "
+                    [ngClass]="{'fa-arrow-up':reverseSort > 0, 'fa-arrow-down':reverseSort < 0}"></i>
+            </div>
+            <div class="cursor-pointer " (click)="sortTable('category')">
+                <span>Category</span>
+                <i *ngIf="currentSortColumn ==='category'" class="pl-2 fa-solid "
+                    [ngClass]="{'fa-arrow-up':reverseSort > 0, 'fa-arrow-down':reverseSort < 0}"></i>
+            </div>
+            <div class="cursor-pointer " (click)="sortTable('alcohol')">
+                <span>Alcoholic</span>
+                <i *ngIf="currentSortColumn ==='alcohol'" class="pl-2 fa-solid "
+                    [ngClass]="{'fa-arrow-up':reverseSort > 0, 'fa-arrow-down':reverseSort < 0}"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-items pb-3 overflow-y-auto" *ngIf="data.length > 0">
+        <div *ngFor="let drink of data">
+            <div *ngIf="(drink.inSearch || drink.inIngr) && drink.inFilter" class="grid grid-cols-3 text-sm md:text-lg text-left">
+                <div class="cursor-pointer px-2 py-3 border " (click)="navToDetail(drink)">{{drink.strDrink}}</div>
+                <div class="cursor-pointer px-2 py-3 border" (click)="navToDetail(drink)">{{drink.strCategory}}</div>
+                <div class="cursor-pointer px-2 py-3 border flex flex-row" (click)="navToDetail(drink)">
+                    <i *ngIf="drink.strAlcoholic === 'Alcoholic'" class="pr-2 fa-solid fa-martini-glass"></i>
+                    <i *ngIf="drink.strAlcoholic !== 'Alcoholic'" class="pr-2 fa-solid fa-martini-glass-empty"></i>
+                    <div class="">{{drink.strAlcoholic}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute inset-y-0 inset-x-0 flex justify-center items-center" *ngIf="data.length < 0">
+        No drinks found...
+    </div>
+</div>

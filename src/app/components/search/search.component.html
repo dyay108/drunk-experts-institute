@@ -1,0 +1,7 @@
+<div class="border-b-2 w-full relative">
+    <div class="w-fit flex justify-between items-center">
+        <input type="text" [(ngModel)]="searchTerm" (input)="searchWord()" id="search"
+            placeholder="Search for drink or ingredients..." class="border-0">
+        <i class="fa-solid fa-xmark pr-2 text-gray-400" (click)="clearSearch()"></i>
+    </div>
+</div>

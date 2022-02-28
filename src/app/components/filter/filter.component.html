@@ -1,0 +1,9 @@
+<div class="relative inline-block text-left">
+
+    <ng-select class="w-full" [items]="options" [multiple]="true" bindValue="name" bindLabel="name" groupBy="type"
+    placeholder="Filter" [(ngModel)]="selectedFilters" (add)="onAdd()" (clear)="onAdd()" (remove)="onAdd()">
+        <ng-template ng-optgroup-tmp let-item="item">
+            {{item.type || 'Unnamed group'}}
+        </ng-template>
+    </ng-select>
+</div>

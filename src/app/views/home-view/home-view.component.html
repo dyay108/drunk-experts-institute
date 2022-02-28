@@ -1,0 +1,18 @@
+<div>
+    <app-navigation-bar></app-navigation-bar>
+    <div class="pt-5 px-4" >
+        <div class="sticky top-0 flex flex-col justify-start items-center pb-5 space-x-2 space-y-2">
+            <app-search (searchCriteria)="search($event)"></app-search>
+            <app-filter [options]="filterOptions" (selected)="applyFilter($event)"></app-filter>
+            
+        </div>
+        <div class="">
+            <app-drink-listing [data]="workingDrinks"></app-drink-listing>
+        </div>
+    </div>
+
+    <div *ngIf="loading" class="fixed z-50 top-0 inset-x-0 flex flex-col justify-center items-center w-full h-full">
+        Loading
+        <i class="fa-solid fa-spinner animate-spin text-xl opacity-100"></i>
+    </div>
+</div>
